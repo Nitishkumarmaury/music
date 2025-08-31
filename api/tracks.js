@@ -10,8 +10,10 @@ export default async function handler(req, res) {
     const url = `${BASE_URL}/tracks/?client_id=${JAMENDO_CLIENT_ID}&format=json&tags=${encodeURIComponent(tag)}&limit=${limit}`;
     const response = await fetch(url);
     const data = await response.json();
-    res.status(200).json(data.results || []);
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify(data.results || []));
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch tracks from Jamendo', details: err.message });
+    res.writeHead(500, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ error: 'Failed to fetch tracks from Jamendo', details: err.message }));
   }
 }
