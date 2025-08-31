@@ -1,6 +1,9 @@
 // api/tracks.js (Vercel serverless function, ES module, native fetch)
 export default async function handler(req, res) {
-  const { tag = 'chillout', limit = 10 } = req.query;
+  // Parse query parameters from req.url
+  const { searchParams } = new URL(req.url, `http://${req.headers.host}`);
+  const tag = searchParams.get('tag') || 'chillout';
+  const limit = searchParams.get('limit') || 10;
   const JAMENDO_CLIENT_ID = 'd5ea8f4b';
   const BASE_URL = 'https://api.jamendo.com/v3.0';
   try {
