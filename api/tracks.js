@@ -1,12 +1,8 @@
-// api/tracks.js (Vercel serverless function) - force redeploy
-// Trivial change to force another Vercel redeploy (2025-08-31)
-const fetch = require('node-fetch');
-
-const JAMENDO_CLIENT_ID = 'd5ea8f4b';
-const BASE_URL = 'https://api.jamendo.com/v3.0';
-
-module.exports = async (req, res) => {
+// api/tracks.js (Vercel serverless function, ES module, native fetch)
+export default async function handler(req, res) {
   const { tag = 'chillout', limit = 10 } = req.query;
+  const JAMENDO_CLIENT_ID = 'd5ea8f4b';
+  const BASE_URL = 'https://api.jamendo.com/v3.0';
   try {
     const url = `${BASE_URL}/tracks/?client_id=${JAMENDO_CLIENT_ID}&format=json&tags=${encodeURIComponent(tag)}&limit=${limit}`;
     const response = await fetch(url);
@@ -15,4 +11,4 @@ module.exports = async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch tracks from Jamendo', details: err.message });
   }
-};
+}
