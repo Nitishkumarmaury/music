@@ -1,0 +1,71 @@
+Premium Meditation & Sleep Music App
+========================================
+
+Overview:
+---------
+This is a premium React-based music web application designed for meditation, healing, and sleep. It features a luxurious, modern UI with animated backgrounds, curated playlists, and a smooth playback experience. The app is built with Vite, React Router, Tailwind CSS, and advanced WebGL/CSS effects for a visually immersive experience.
+
+Key Features:
+-------------
+- Animated global background (DarkVeil) with premium dark theme
+- MagicBento animated SVG grid background (optional, layered)
+- Premium color palette: gold, cream, white on dark backgrounds
+- Responsive, modern UI with beautiful typography
+- Playlist and track browsing with animated, styled tables
+- Audio player with queue, now playing, and timer modal
+- Context API for global player state
+- Custom components for visual effects (ElectricBorder, GradualBlur, Iridescence, etc.)
+- All content styled for maximum readability and luxury
+
+Project Structure:
+------------------
+- public/
+  - Static assets, service worker, icons
+- healing music/, sleeping music/
+  - MP3 files for meditation, healing, and sleep
+- src/
+  - App.jsx: Main app shell, global backgrounds, routing
+  - index.css: Global and Tailwind styles
+  - components/
+    - DarkVeil.jsx: Animated WebGL background (OGL/GLSL)
+    - MagicBentoBackground.jsx: SVG grid animation background
+    - Player.jsx, NowPlaying.jsx, Queue.jsx: Audio player UI
+    - ElectricBorder.jsx, GradualBlur.jsx, Iridescence.jsx: Visual effects
+    - Footer.jsx, Header.jsx: Layout
+  - contexts/
+    - PlayerContext.jsx: React Context for player state
+  - pages/
+    - Home.jsx: Meditation landing page, premium styled
+    - Playlist.jsx: Playlist view, animated premium table
+    - Track.jsx: Track details
+    - About.jsx, Blog.jsx, Browse.jsx: Informational and navigation pages
+  - services/
+    - (future: API, audio, or playlist services)
+  - assets/
+    - Static images, SVGs
+
+Styling & UI:
+-------------
+- Uses Tailwind CSS v3 for utility-first styling
+- All backgrounds and cards use dark gradients with gold/cream/white text
+- Tables and buttons are styled for luxury and clarity
+- Responsive design for all devices
+
+How to Run:
+-----------
+1. Install dependencies: npm install
+2. Start dev server: npm run dev
+3. Open http://localhost:5173 (or next available port)
+
+Customization:
+--------------
+- Adjust DarkVeil parameters in App.jsx for different background effects
+- Add or edit playlists and tracks in the appropriate folders/components
+- Update color palette in Tailwind config or component classes
+
+Credits:
+--------
+- Built with React, Vite, Tailwind CSS, OGL
+- Custom GLSL shader and SVG/CSS effects
+
+For more details, see README.md or explore the codebase.

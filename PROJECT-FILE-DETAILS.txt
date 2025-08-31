@@ -1,0 +1,79 @@
+Project File & Feature Overview
+==============================
+
+1. App Shell & Routing
+----------------------
+- src/App.jsx
+  - Main React component.
+  - Sets up global backgrounds (DarkVeil, MagicBentoBackground).
+  - Handles routing (Home, Playlist, Track, About, Blog, Browse).
+  - Applies premium dark theme and gold/cream text globally.
+
+2. Global Styles
+----------------
+- src/index.css
+  - Imports Tailwind CSS and custom styles.
+  - Sets up base font, button, and color rules.
+
+3. Animated Backgrounds
+-----------------------
+- src/components/DarkVeil.jsx
+  - WebGL (OGL/GLSL) animated dark background.
+  - Used globally for a premium, immersive look.
+- src/components/MagicBentoBackground.jsx
+  - Animated SVG grid effect (optional, layered under DarkVeil).
+
+4. Player & Audio UI
+--------------------
+- src/components/Player.jsx
+  - Main audio player controls (play, pause, seek, etc.).
+- src/components/NowPlaying.jsx
+  - Displays current track info.
+- src/components/Queue.jsx
+  - Shows upcoming tracks in the queue.
+- src/components/TimerModal.jsx
+  - Sleep timer modal for playback.
+
+5. Visual Effects
+-----------------
+- src/components/ElectricBorder.jsx, GradualBlur.jsx, Iridescence.jsx
+  - Custom visual/animated border and blur effects for premium UI.
+
+6. Layout & Navigation
+----------------------
+- src/components/Header.jsx, Footer.jsx
+  - App header and footer.
+- src/components/SearchBar.jsx
+  - Search input for tracks/playlists.
+
+7. Pages
+--------
+- src/pages/Home.jsx
+  - Meditation landing page, premium styled, gold/cream on dark.
+- src/pages/Playlist.jsx
+  - Playlist view, animated premium table, gold/cream on dark.
+- src/pages/Track.jsx
+  - Track details and playback.
+- src/pages/About.jsx, Blog.jsx, Browse.jsx
+  - Informational and navigation pages.
+
+8. Context & State
+------------------
+- src/contexts/PlayerContext.jsx
+  - React Context for global player state (current track, queue, etc.).
+
+9. Music Assets
+---------------
+- healing music/, sleeping music/
+  - MP3 files for meditation, healing, and sleep.
+
+10. Static & Config
+-------------------
+- public/
+  - Static assets, service worker, icons.
+- package.json, tailwind.config.js, vite.config.js
+  - Project configuration and dependencies.
+
+Summary:
+--------
+Every file is organized for clarity and premium user experience. All main UI and content use gold, cream, and white on a dark animated background for maximum readability and luxury. See each file for specific implementation details.
