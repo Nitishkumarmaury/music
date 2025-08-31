@@ -4,7 +4,9 @@
 
 
 // Use EB Layer backend for all music API requests
-const EB_LAYER_BASE = 'http://localhost:4000/api';
+const EB_LAYER_BASE = typeof window !== 'undefined' && window.location.hostname.endsWith('vercel.app')
+  ? 'https://music-theta-three.vercel.app/api'
+  : 'http://localhost:4000/api';
 
 export async function fetchPlaylists() {
   // Jamendo doesn't have 'playlists' in the Spotify sense, so we use 'radios' or 'tags' as categories
