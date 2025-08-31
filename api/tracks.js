@@ -1,4 +1,5 @@
 // api/tracks.js (Vercel serverless function, ES module, native fetch)
+// Trivial change to force clean redeploy (2025-08-31)
 export default async function handler(req, res) {
   // Parse query parameters from req.url
   const { searchParams } = new URL(req.url, `http://${req.headers.host}`);
