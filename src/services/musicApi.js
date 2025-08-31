@@ -5,7 +5,7 @@
 
 // Use EB Layer backend for all music API requests
 const EB_LAYER_BASE = typeof window !== 'undefined' && window.location.hostname.endsWith('vercel.app')
-  ? 'https://music-theta-three.vercel.app/api'
+  ? `https://${window.location.host}/api`
   : 'http://localhost:4000/api';
 
 export async function fetchPlaylists() {
